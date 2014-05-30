@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6
 { font: normal 175% 'News Cycle', Arial, sans-serif;
   color: #000;
   letter-spacing: -1px;
-  margin: 0 0 10px 0;}
+  margin: 10px 0 10px 0;}
 
 h2
 { font: normal 165% 'News Cycle', Arial, sans-serif;}
@@ -235,17 +235,17 @@ ul img {
   height: 30px;}  
 
 #content
-{ width: 680px;
+{ width: 940px;
   margin: 0 0 20px 0;
   float: left;}
 
 .content_item
-{ width: 660px;
+{ width: 920px;
   margin-top: 20px;
   margin-bottom: 20px;}
 
 .content_imagetext
-{ width: 640px;
+{ width: 900px;
   padding: 5px;
   margin: 20px 0 0 0;
   float: left;}
@@ -262,12 +262,12 @@ ul img {
   float: left;}
 
 table.appinfo
-{ width: 678px;
+{ width: 938px;
   border-style: double;
   border-color: #008CC6;
   border-width: 6px;
   padding: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   background: #EEE;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
@@ -313,6 +313,7 @@ footer a:hover
 { font: normal 110% Arial, Helvetica, sans-serif;
   float: left;
   padding: 5px 10px 7px 10px;
+  margin: 0 0 10px 0;
   background: #0043A8;
   background: -moz-linear-gradient(#43A9FF, #0043A8);
   background: -o-linear-gradient(#43A9FF, #0043A8);

@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html>
 
-<?php $page = 'About';
-$page_name = 'About';
-include('../header.php'); ?>
+<head>
+  <title>About - Onpon's Shelf</title>
+  <meta name="description" content="onpon4's games, apps, and other works." />
+  <meta name="keywords" content="onpon4, onpon, games, apps, free" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
 
+<body>
+  <div id="main">
+    <header>
+      <div id="strapline">
+        <div id="welcome_slogan">
+          <h3>Onpon's <span>Shelf</span></h3>
+        </div><!--close welcome_slogan-->
+      </div><!--close strapline-->      
+      <nav>
+        <div id="menubar">
+          <ul id="nav">
+            <li><a href="..">Home</a></li>
+            <li class="current"><a href=".">About</a></li>
+            <li><a href="../games">Games</a></li>
+            <li><a href="../apps">Apps</a></li>
+            <li><a href="../other">Other Works</a></li>
+            <li><a href="../contact">Contact</a></li>
+            <li><a href="../links">Links</a></li>
+          </ul>
+        </div><!--close menubar-->
+      </nav>
+    </header>
+
+    <div id="site_content">
+      <div id="content">
         <div class="content_item">
           <div class="content_imagetext">
             <div class="content_image" style="width:240px; height:240px;">
@@ -17,7 +46,16 @@ include('../header.php'); ?>
             <p>I also advocate <a href="http://freedomdefined.org/Definition">free/libre culture</a>, so I always release any significant culture works I produce under a free/libre license (usually CC BY-SA or CC0, depending on the situation). However, I don't refuse to read or view non-libre cultural works, and I also don't refuse to promote non-libre cultural works (or works that contain non-libre culture). There are two main reasons for this: first, software controls part of your life (your computing), so you cannot be free if you use proprietary software. This doesn't apply to cultural works; non-libre culture prevents you from sharing it or using it in your own cultural works, but it doesn't control you in any way. I therefore don't think free/libre culture is an urgent issue. Second, I think copyright law <a href="http://questioncopyright.org">should be abolished entirely</a>, and this would effectively make all cultural works free/libre. Still, I always prefer free/libre culture over non-libre culture, and I am more willing to directly support free/libre cultural works than non-libre cultural works.</p>
           </div><!--close content_imagetext-->
         </div><!--close content_item-->
+      </div><!--close content-->
+    </div><!--close site_content-->
+  </div><!--close main-->
 
-<?php include('../footer.php'); ?>
+  <footer>
+    <div id="footer_content">
+      <a href="http://fotogrph.com">Images</a> |  <a href="http://www.heartinternet.co.uk/vps/">Virtual Server</a>  | website template by <a href="http://www.freehtml5templates.co.uk">Free HTML5 Templates</a><br /><br />
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />Except where otherwise noted, this page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </div><!--close footer_content-->
+  </footer>
+</body>
 
 </html>
