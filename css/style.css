@@ -300,10 +300,10 @@ footer
 footer a, footer a:hover
 { text-shadow: 1px 1px #000;
   color: #FFF;
-  text-decoration: none;}
+  text-decoration: underline;}
 
 footer a:hover
-{ text-decoration: underline;}
+{ text-decoration: none;}
   
  .readmore a
 { color: #FFF;
