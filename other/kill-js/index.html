@@ -35,7 +35,7 @@
     <div id="site_content">
       <div id="content">
         <div class="content_item">
-          <h1>Automatically Installed JavaScript Must Die</h1>
+          <h1>Automatically Installed JavaScript: Fix, or Kill?</h1>
           <p>In Richard Stallman's essay, "The JavaScript Trap", it is pointed out that people run proprietary software which is silently, automatically installed into their browsers every day. In fact, he very much downplayed the problem; not only are most users running proprietary programs every day merely by browsing the Web, they are running dozens or even hundreds of such programs each day. The JavaScript Trap is very real and prolific; the Web is said to be so broken without these non-standard, usually proprietary extensions to HTML that Web browsers have moved toward not even offering an obvious option to disable JavaScript; disabling JavaScript, it is argued, will only cause confusion.</p>
 
           <p>It's obvious that we need to solve this problem. However, in focusing on whether or not scripts are "trivial" or libre, Mr. Stallman misses a crucial point: this behavior of automatic, silent software installation is, itself, the main problem. That most of the software in question is proprietary is merely a side-effect.</p>
@@ -46,19 +46,41 @@
 
           <p>It seems great on the surface, but what follows from this is that software is still being silently installed into our browsers every day. The only difference is that LibreJS thinks the programs are libre.</p>
 
-          <p>I don't want to downplay the importance of all software being libre. However, when any software is automatically installed onto our computers by the request of another party, it makes exercising freedom 0 properly impossible. The problem here is that it is assumed that you want all of these JavaScript programs, of which there are likely to be hundreds of new ones each day, to be executed on your computer, typically before you even have a chance to check the source code.</p>
+          <p>I don't want to downplay the importance of all software being libre. However, when any software is automatically installed onto our computers by the request of another party, it makes exercising freedom 0 properly impossible. It is assumed that you want all of these JavaScript programs, of which there are likely to be hundreds of new ones each day, to be executed on your computer, typically before you even have a chance to check the source code.</p>
+
+          <p>Even worse, the system of automatic JavaScript software installation only installs the software temporarily, to be executed once. In effect, whenever the server updates a JavaScript program that is sent to users' Web browsers, that update is effectively imposed on the users. Even if the script is libre, it's as if it has a backdoor built-in.</p>
 
           <p>It is not enough for software to be libre. It also needs to not be installed unless the user authorizes it, and then not updated unless the user authorizes it. Simply visiting a Web page doesn't count as authorization to install whatever software the page wants to install; after all, I have visited the Debian website recently, but that doesn't mean that I authorize an installation of Debian on my computer. Similarly, visiting a Web page that requests installation of JavaScript doesn't necessarily mean you want to install that JavaScript.</p>
 
-          <p>We should not waste our efforts trying to reconcile automatic JavaScript program installation with liberty in our computing. Instead, we must reject, and ultimately seek to put an end to, all of it, whether the software in question is libre or proprietary.</p>
+          <p>So what can we do? I can think of two solutions.</p>
 
-          <p>When I first proposed this, some people asked what I proposed as an "alternative" to JavaScript. One person even accused me of trying to "stop the web in its tracks". This is blatant nonsense. Eliminating automatic JavaScript program installation would not "stop the web in its tracks". If it would stop anything in its tracks, it would be proliferation of "Web applications", and it's obvious that normally installed software can replace these.</p>
+          <h3>Solution 1: Fix JavaScript</h3>
 
-          <p>Additionally, I don't propose to eliminate JavaScript. I'm not too fond of the language from a programming standpoint, but there's nothing ethically wrong with it. I propose to eliminate <em>automatic installation</em> of JavaScript programs. There is already a separate mechanism for the user to install JavaScript programs in their browser: user scripts (also known as "Greasemonkey scripts", after the extension which adds support for user scripts in some browsers). I have a few user scripts installed in my browser, myself.</p>
+          <p>The first possible solution, and the most obvious one, is to modify the behavior of Web browsers with regard to JavaScript software requests. I propose that for the system to be acceptable, all of the following conditions MUST be met:</p>
 
-          <p>The reason I propose to reject automatically loaded JavaScript entirely, rather than trying to make said JavaScript libre and trying to modify browser behavior to require user intervention before installing requested JavaScript, is because the latter option requires far more effort and no additional benefit. We already have a system for user scripts.</p>
+          <ul>
+            <li>The browser must install JavaScript code permanently, and only when the user explicitly authorizes it in some fashion.</li>
+            <li>The browser must give the user the ability to install any arbitrary script, not just the script requested by the Web page.</li>
+            <li>The browser must not upgrade any JavaScript code automatically, unless the user has specified that it should be, and the user must be able to choose where such updates come from.</li>
+          </ul>
 
-          <p>The current automatic JavaScript loading system cannot be reconciled with user freedom without turning its whole design on its head and eliminating its purpose. Let's not waste our effort trying to do this. Let's instead focus our efforts on convincing webmasters to stop requiring JavaScript, and developing user scripts to replace requested JavaScript on popular sites whose webmasters refuse to cooperate.</p>
+          <p>You will notice that automatic license detection isn't included in any of this. So how does a user get only libre JavaScript without manually checking every source file? The solution is actually quite simple: the same way as any other libre software.</p>
+
+          <p>When I installed a microblogging client called Hotot from Trisquel's software repository, I didn't check the source code to figure out what license it is, and I didn't run a program to do this for me, either. It's really quite simple: I trust the developers of Trisquel to only include libre software with no malicious features in the Trisquel repository. Incidentally, Trisquel's developers actually <em>can</em> protect Trisquel's users from malware; LibreJS can't. Given all of this, I propose we create and maintain a repository of libre JavaScript code.</p>
+
+          <p>For this to work, installed JavaScript programs should also work for all Web pages that request it, not just one page. What already installed JavaScript code to use by default can be determined by getting a hash of minified versions of installed scripts, and then getting a hash of requested scripts after minifying them the same way. If that doesn't return a match, the file names of the scripts can be checked for matches or near-matches, and the user can be asked if these scripts should be used. Some kind of database in the user's browser specifying websites certain scripts should be used on would also be helpful.</p>
+
+          <p>I suppose this approach would take a considerable amount of effort, and this is probably why RMS, the FSF, and the developer of LibreJS haven't attempted it. But LibreJS is trying to fundamentally change the behavior of all Web developers in the world. Compared to that, I would argue that maintaining a repository of libre JavaScript programs would be a small task.</p>
+
+          <h3>Solution 2: Kill JavaScript</h3>
+
+          <p>When I proposed something like Solution 1 on the bug-gnuzilla mailing list, one reply noted that there's a much simpler solution: rather than trying to fix JavaScript, we could kill it. Of course, I really mean <em>automatically installed</em> JavaScript. There is nothing wrong with the current use of JavaScript to develop Firefox extensions, for example.</p>
+
+          <h3>Which approach is better?</h3>
+
+          <p>Each of these approaches has strengths and weaknesses. The first solution can yield good results immediately for things like Diaspora and Reddit: websites whose JavaScript code is required, but libre. However, it would take a lot of work to get it to work, and would not be likely to bring about any change in the Web. The second solution, on the other hand, requires almost no work and would bring about a pretty big change in the Web if it works, but will not yield immediate results.</p>
+
+          <p>So which is better? I'm not sure. Perhaps it would be best to try both approaches and hope that one of them will work.</p>
         </div><!--close content_item-->
       </div><!--close content-->
     </div><!--close site_content-->
