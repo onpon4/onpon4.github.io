@@ -74,13 +74,19 @@
 
           <h3>Solution 2: Kill JavaScript</h3>
 
-          <p>When I proposed something like Solution 1 on the bug-gnuzilla mailing list, one reply noted that there's a much simpler solution: rather than trying to fix JavaScript, we could kill it. Of course, I really mean <em>automatically installed</em> JavaScript. There is nothing wrong with the current use of JavaScript to develop Firefox extensions, for example.</p>
+          <p>When I proposed something like Solution 1 on the bug-gnuzilla mailing list, one reply noted that there's a much simpler solution: rather than trying to fix JavaScript, we could just kill it: disable JavaScript execution in our browsers entirely. Of course, I really mean <em>automatically installed</em> JavaScript. There is nothing wrong with the current use of JavaScript to develop Firefox extensions, for example. User scripts and extensions can even be developed to replace important proprietary JavaScript code.</p>
 
           <h3>Which approach is better?</h3>
 
-          <p>Each of these approaches has strengths and weaknesses. The first solution can yield good results immediately for things like Diaspora and Reddit: websites whose JavaScript code is required, but libre. However, it would take a lot of work to get it to work, and would not be likely to bring about any change in the Web. The second solution, on the other hand, requires almost no work and would bring about a pretty big change in the Web if it works, but will not yield immediate results.</p>
+          <p>Each of these approaches has strengths and weaknesses.</p>
 
-          <p>So which is better? I'm not sure. Perhaps it would be best to try both approaches and hope that one of them will work.</p>
+          <p>The first solution can yield good results immediately for things like Diaspora and Reddit: websites whose JavaScript code is required, but mostly libre. It would probably not bring about much if any change in the Web, but it doesn't need to in order to work. However, it would require some work to adjust a browser's behavior with respect to JavaScript appropriately, and it would be a lot more work to maintain a repository of libre JavaScript programs.</p>
+
+          <p>The second solution, on the other hand, is rather similar to what LibreJS is currently trying to do. It depends on changing the Web: convincing the majority of Web developers to stop requiring JavaScript code.</p>
+
+          <p>I'm not sure which is better, but both of these solutions actually give the users control over JavaScript execution in their browsers. LibreJS does not. Let's stop trying to automate license checking, and start working on one or both of these proper solutions to the JavaScript Trap.</p>
+
+          <p>In the meantime, until a libre browser which fixes JavaScript is available, anyone who wants freedom in their computing must disable JavaScript execution in their browsers.</p>
         </div><!--close content_item-->
       </div><!--close content-->
     </div><!--close site_content-->
