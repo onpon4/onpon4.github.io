@@ -50,7 +50,7 @@
 
           <p>Even worse, the system of automatic JavaScript software installation only installs the software temporarily, to be executed once. In effect, whenever the server updates a JavaScript program that is sent to users' Web browsers, that update is effectively imposed on the users. Even if the script is libre, it's as if it has a backdoor built-in.</p>
 
-          <p>It is not enough for software to be libre. It also needs to not be installed unless the user authorizes it, and then not updated unless the user authorizes it. Simply visiting a Web page doesn't count as authorization to install whatever software the page wants to install; after all, I have visited the Debian website recently, but that doesn't mean that I authorize an installation of Debian on my computer. Similarly, visiting a Web page that requests installation of JavaScript doesn't necessarily mean you want to install that JavaScript.</p>
+          <p>It is not enough for software to be libre. It also needs to not be installed unless the user authorizes it, and then not updated unless the user authorizes it. Simply visiting a Web page doesn't count as authorization to install whatever software the page wants to install; after all, I have visited the Debian website in the past, but that doesn't mean that I authorize an installation of Debian on my computer. Similarly, visiting a Web page that requests installation of JavaScript doesn't necessarily mean you want to install that JavaScript.</p>
 
           <p>So what can we do? I can think of two solutions.</p>
 
@@ -64,9 +64,7 @@
             <li>The browser must not upgrade any JavaScript code automatically, unless the user has specified that it should be, and the user must be able to choose where such updates come from.</li>
           </ul>
 
-          <p>You will notice that automatic license detection isn't included in any of this. So how does a user get only libre JavaScript without manually checking every source file? The solution is actually quite simple: the same way as any other libre software.</p>
-
-          <p>When I installed a microblogging client called Hotot from Trisquel's software repository, I didn't check the source code to figure out what license it is, and I didn't run a program to do this for me, either. It's really quite simple: I trust the developers of Trisquel to only include libre software with no malicious features in the Trisquel repository. Incidentally, Trisquel's developers actually <em>can</em> protect Trisquel's users from malware; LibreJS can't. Given all of this, I propose we create and maintain a repository of libre JavaScript code.</p>
+          <p>You will notice that automatic license detection isn't included in any of this. So how does a user get only libre JavaScript without manually checking every source file? The solution is actually quite simple: the same way as any other libre software. It's really quite simple: I trust the developers of Trisquel to only include libre software with no malicious features in the Trisquel repository. Incidentally, Trisquel's developers can actually protect Trisquel's users from <em>malware</em>, proprietary or not; LibreJS can't. Similarly, we can create and maintain a repository of libre JavaScript code.</p>
 
           <p>For this to work, installed JavaScript programs should also work for all Web pages that request it, not just one page. What already installed JavaScript code to use by default can be determined by getting a hash of minified versions of installed scripts, and then getting a hash of requested scripts after minifying them the same way. If that doesn't return a match, the file names of the scripts can be checked for matches or near-matches, and the user can be asked if these scripts should be used. Some kind of database in the user's browser specifying websites certain scripts should be used on would also be helpful.</p>
 
