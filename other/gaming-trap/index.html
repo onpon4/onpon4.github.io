@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>The Gaming Trap - Onpon's Shelf</title>
+  <meta name="description" content="onpon4's games, apps, and other works." />
+  <meta name="keywords" content="onpon4, onpon, games, apps, free" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="strapline">
+        <div id="welcome_slogan">
+          <h3>Onpon's <span>Shelf</span></h3>
+        </div><!--close welcome_slogan-->
+      </div><!--close strapline-->      
+      <nav>
+        <div id="menubar">
+          <ul id="nav">
+            <li><a href="../..">Home</a></li>
+            <li><a href="../../about">About</a></li>
+            <li><a href="../../games">Games</a></li>
+            <li><a href="../../apps">Apps</a></li>
+            <li class="current"><a href="..">Other Works</a></li>
+            <li><a href="../../contact">Contact</a></li>
+            <li><a href="../../links">Links</a></li>
+          </ul>
+        </div><!--close menubar-->
+      </nav>
+    </header>
+
+    <div id="site_content">
+      <div id="content">
+        <div class="content_item">
+          <h1>The Gaming Trap</h1>
+          <p>The following is a common position in the libre software community: "Proprietary software is not acceptable, but proprietary non-functional data is fine." This is the position of the Free Software Foundation. Personally, while I think proprietary artistic works are unethical, I basically adhere to this position in practice, because I don't think boycotting an artistic work does any good. To have a meaningful effect on a culture, you must be a part of it, and unfortunately, the vast majority of our culture is copyrighted and proprietary.</p>
+
+          <p>However, it seems to be a common mistake for people to take this permissiveness excessively far for games, to the point where lines are drawn in arbitrary places concerning what software is. It can be very easy to say that a game is "entirely libre software, but has proprietary data", and therefore conclude that the game is fine. This is an oversimplification. In fact, it is quite common for "data" in games to include software, such as scripts, and so a lot of games that seem on the surface to be libre software, in fact, are partially powered by proprietary software.</p>
+
+          <p>To address such mistakes, this article lists cases of "gaming traps" &ndash; games which may appear on the surface to be libre, but actually include proprietary software, usually because of software that is a part of the game's data. This is permanently a work in progress, as it cannot realistically ever be truly complete. If you know of another example, please <a href="mailto:onpon4@riseup.net">let me know</a> so I can add it.</p>
+
+          <p>Table of Contents:</p>
+          <ul>
+            <li><a href="#emulators">Emulators</a></li>
+            <li><a href="#scummvm">ScummVM</a></li>
+            <li><a href="#visual-novels">Visual Novels</a></li>
+            <li><a href="#web">Web-based Games</a></li>
+            <li><a href="#cave-story">Cave Story</a></li>
+            <li><a href="#cube">Cube, AssaultCube, and Cube 2: Sauerbraten</a></li>
+            <li><a href="#frogatto">Frogatto</a></li>
+            <li><a href="#idsoftware">Games by id Software (Doom, Quake, etc)</a></li>
+            <li><a href="#mari0">Mari0</a></li>
+          </ul>
+
+
+          <hr />
+
+
+          <h2 id="emulators">Emulators</h2>
+
+          <p>I have seen some people talk about emulators running proprietary games as if they were libre. The justifications vary, but they are always weak. The simple fact is that a ROM for a system like the NES, the MegaDrive, or the PlayStation contains a program, compiled for the respective system's architecture. It's no different from a program compiled for x86, and any justification for considering a proprietary game for these systems to be acceptable would apply just as well to a proprietary game compiled for x86, either on an x86 computer with no Internet connectivity or in a virtual machine that is not granted network access.</p>
+
+          <p>In fact, it often goes further than that. Firstly, many dedicated video game systems (such as the SNES) require a proprietary SDK of some kind to develop software for them, so libre software isn't even fully a possibility on these systems. Secondly, many <em>emulators</em> are proprietary. Some prominent examples of proprietary emulators include MAME, Snes9x, and ePSXe.</p>
+
+
+          <h2 id="scummvm">ScummVM</h2>
+
+          <p>This is actually a mistake I personally made. ScummVM, a project to recreate several proprietary adventure game engines, is entirely libre software, so it can be easy to believe that any game it supports is acceptable. You would be wrong, unfortunately, in almost every case.</p>
+
+          <p>In fact, adventure games are quite complicated, so some sort of scripting is always necessary. In fact, scripting is the primary function of many adventure game engines. For example, "SCI", the name of one of the engines used by Sierra, stands for "Sierra Creative Interpreter", referring to it mainly as an interpreter for the custom scripting language involved.</p>
+
+          <p>Many, or perhaps all, of these scripts are compiled into a sort of bytecode. The good news is that the ScummVM team has done a pretty good job uncovering the meaning of this bytecode, and many games even have patches to their scripts applied in a dynamic fashion. The bad news is that the scripts are still copyrighted, and will remain copyrighted for decades under the current copyright system.</p>
+
+          <p>There are a few games supported by ScummVM which have been released under libre licenses. Be sure to actually check the license; some of the freeware releases do not permit modifications. As of December 2015, the only ScummVM-supported games under libre licenses are Beneath a Steel Sky, Flight of the Amazon Queen, Drascula, Lure of the Temptress, Sfinx, and Soltys.</p>
+
+
+          <h2 id="visual-novels">Visual Novels</h2>
+
+          <p>Like with ScummVM, being overly trusting of visual novels was a mistake I personally made. There are various visual novel engines. Some are libre, and some are not. It can be tempting to believe that a visual novel utilizing a libre engine, such as Ren'Py, is automatically acceptable. You would, of course, be wrong.</p>
+
+          <p>Much like point-and-click adventure games, visual novels have a high dependence on scripting to work. In Ren'Py's case, scripts come in the form of .rpy files, which are written in a custom language that also supports executing Python code directly. Unfortunately, just about every visual novel I have checked is under a proprietary license, or more commonly, no license at all.</p>
+
+          <p>One particularly egregious example of this mistake I have seen is Katawa Shoujo. I have seen this visual novel described as "open source" and a claim that the engine is under the Expat/MIT license. This characterization is only accurate as far as Ren'Py itself. Not only are the Ren'Py scripts for Katawa Shoujo under CC BY-NC-ND &ndash; which forbids both commercial use and modifications &ndash; but Katawa Shoujo's distribution doesn't even include source code for these scripts. They are distributed only as compiled bytecode, which suggests a deliberate attempt from the novel's developers to obstruct people's technical ability to modify it.</p>
+
+
+          <h2 id="web">Web-based Games</h2>
+
+          <p>We all know that Flash games are bad because Flash Player is proprietary. However, some people seem to be under the false impression that using Gnash or Lightspark solves the problem. In fact, even if Flash were libre, most Flash content on the Web would still be unacceptable. This is because most Flash objects include ActionScript code, this code almost never carries a license, and source code for the Flash object is almost never supplied anyway.</p>
+
+          <p>The same holds true for Java applets and "HTML5" games. Java applets obviously include Java code, and "HTML5" games pretty much universally use JavaScript code (meaning they are really JavaScript games). In almost all cases, this software is proprietary. JavaScript code is often minified, meaning you don't have source code, and Java applets almost always contain only compiled bytecode, not source code.</p>
+
+          <p>Of course, not all programs you find on the Web are proprietary, but this is something you have to check.</p>
+
+
+          <h2 id="cave-story">Cave Story</h2>
+
+          <p>The original Cave Story is entirely proprietary, but the engine has been mostly rewritten; the rewrite is called NXEngine. Unfortunately, NXEngine imports map data from the original Cave Story, which includes scripts. Interestingly, these scripts are not only compiled into bytecode, but also encrypted. NXEngine is able to decrypt them by extracting the key from Cave Story's files, but this does suggest that the author of Cave Story intended to make these scripts unchangeable.</p>
+
+
+          <h2 id="cube">Cube, AssaultCube, and Cube 2: Sauerbraten</h2>
+
+          <p>All three of these games' data include several ".cfg" files which are programs. They do not carry any license, which (as the readmes of these games are sure to tell you) means they must be assumed to be proprietary.</p>
+
+
+          <h2 id="frogatto">Frogatto</h2>
+
+          <p>Frogatto is advertised as driven by an open source engine, and that's technically correct; the basic shell of Frogatto's engine has been released as "Anura". A lot of Frogatto is also released under CC BY, a libre license. However, everything under data/levels is proprietary, and some scripts are included in these files. They are found in various ".cfg" files, usually controlling events.</p>
+
+
+          <h2 id="idsoftware">Games by id Software (Doom, Quake, etc)</h2>
+
+          <p>The original Doom engine, which powers Doom and Doom II, does not include any sort of scripting support. The variant of the Doom engine used by Heretic similarly does not support scripting. Therefore, if you run one of these games in a libre Doom source port, no proprietary software gets executed. The same is true of the engines of Quake, QuakeWorld, and Quake II. However, scripting support was added to id Software's engines later on; shader scripts are supported in id Tech 3 (the engine of Quake III), and a more powerful scripting system was added to id Tech 4 (the engine of Doom 3).</p>
+
+          <p>The variant of the Doom engine used by Hexen also added scripting support in the form of ACS. Hexen of course makes use of this support. ACS is supported by ZDoom, so it is common for PWADs that are meant to be played with ZDoom to include scripts as well.</p>
+
+          <p>It's worth noting that PWADs compatible with vanilla Doom, Boom, or MBF are fine. DeHackEd files are also fine. None of these contain any programs which are executed.</p>
+
+
+          <h2 id="mari0">Mari0</h2>
+
+          <p>Source code is available for this game, but it is under the proprietary CC BY-NC-SA license, which forbids commercial use.</p>
+        </div><!--close content_item-->
+      </div><!--close content-->
+    </div><!--close site_content-->
+  </div><!--close main-->
+
+  <footer>
+    <div id="footer_content">
+      <a href="http://fotogrph.com">Images</a> | website template by <a href="http://www.freehtml5templates.co.uk">Free HTML5 Templates</a><br /><br />
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />Except where otherwise noted, this page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </div><!--close footer_content-->
+  </footer>
+</body>
+
+</html>
