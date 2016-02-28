@@ -1,0 +1,259 @@
+:"SPACE INVADERS"
+"V 1.4.1"
+"WRITTEN IN 2011 BY ONPON4 <ONPON4 [AT] RISEUP.NET>"
+"TRANSCRIBED TO TEXT IN 2016"
+"THIS PROGRAM IS DEDICATED TO THE PUBLIC DOMAIN VIA CC0."
+getKey
+ClrHome
+ClrDraw
+AxesOff
+GridOff
+0->|LINVDR(1)
+If dim(|LINVDR)>9
+	Goto 1
+{0,0,0,0,0,0,0,0,0,0}->|LINVDR
+Lbl 1
+0->Xmin
+94->Xmax
+0->Xscl
+~62->Ymin
+0->Ymax
+0->Yscl
+1->Xres
+{44,0,0,3,0,6,6,~2}->L1
+0->K
+Repeat K
+	44->L1(1)
+	0->L1(2)
+	0->L1(3)
+	16->L1(6)
+	6->L1(7)
+	~2->L1(8)
+	[[1,1,1,1,1,1][1,1,1,1,1,1]]->[A]
+	"M M M M M M M M M M M M "->Str1
+	"                        "->Str2
+	{0}->|LBX
+	{0}->|LBY
+	{0}->|LBF
+	{0}->|LBA
+	ClrDraw
+	1->L
+	While L
+		getKey
+		If Ans
+		Then
+			If Ans!=24 and Ans!=26 and Ans!=34 and Ans!=45 and Ans!=21
+			Then
+				If 1>L1(3)
+				Then
+					1+L1(3)->L1(3)
+					2+L1(1)->|LBX(1+dim(|LBX))
+					50->|LBY(1+dim(|LBY))
+					1->|LBF(1+dim(|LBF))
+					1->|LBA(1+dim(|LBA))
+				End
+			Else
+				If Ans=21
+				Then
+					ClrDraw
+					Text(0,0,"HIGH SCORES:")
+					For(I,2,10)
+						Text(6(I-1),0,I-1," - ",|LINVDR(I))
+					End
+					Repeat getKey
+					End
+					ClrDraw
+				End
+				If Ans=24
+					~4->L1(2)
+				If Ans=26
+					4->L1(2)
+				If Ans=34
+					0->L1(2)
+				If Ans=45
+				Then
+					0->L
+					1->K
+				End
+			End
+		End
+		|LBY+4-8(|LBF)->|LBY
+		0->L1(3)
+		{0}->L2
+		{0}->L3
+		{0}->L4
+		{0}->L5
+		For(I,2,dim(|LBX))
+			|LBY(I)-4+8(|LBF(I))
+			If Ans>=0 and Ans<=57
+				Text(Ans,|LBX(I)," ")
+			If |LBA(I)
+			Then
+				1+dim(L2)->A
+				|LBX(I)->L2(A)
+				|LBY(I)->L3(A)
+				1->L4(A)
+				|LBF(I)->L5(A)
+				If |LBY(I)<0 or 54<|LBY(I)
+				Then
+					0->L4(A)
+				Else
+					Text(|LBY(I),|LBX(I),":")
+					L1(3)+|LBF(I)->L1(3)
+				End
+			End
+		End
+		L2->|LBX
+		L3->|LBY
+		L4->|LBA
+		L5->|LBF
+		Text(~1,51,L1(1)," ")
+		For(I,2,dim(|LBX))
+			If |LBA(I) and not(|LBF(I)) and |LBX(I)>=L1(1) and |LBX(I)<L1(1)+5 and |LBY(I)>46 and 57>|LBY(I)
+			Then
+				0|LBA->|LBA
+				L1(4)-1->L1(4)
+				If 0>=L1(4)
+				Then
+					0->L
+					1->K
+				End
+				For(J,0,3)
+					For(Q,0,7)
+						Text(~1,51,L1(1),"+")
+					End
+					For(Q,0,7
+						Text(~1,51,L1(1),"*")
+					End
+				End
+				Text(~1,51,L1(1)," ")
+				For(J,0,99)
+				End
+				44->L1(1)
+				0->L1(2)
+			End
+		End
+		L1(1)+L1(2)->L1(1)
+		If 2>L1(1)
+			2->L1(1)
+		If 88<L1(1)
+			88->L1(1)
+		If not(K)
+			Text(~1,51,L1(1),"A")
+		Horizontal ~59
+		Text(0,0,L1(5))
+		Text(6,0,L1(4))
+		dim([A])->L6
+		L6(1)->D
+		L6(2)->E
+		L1(6)->V
+		L1(7)->W
+		L1(6)+L1(8)->L1(6)
+		If L1(6)<4 or 85-10E<L1(6)
+		Then
+			L1(6)-L1(8)->L1(6)
+			~L1(8)->L1(8)
+			2+L1(7)->L1(7)
+			If 59<=8D-2+L1(7)
+			Then
+				0->L
+				1->K
+			End
+		End
+		If rand<.6 and 4>dim(|LBX)-L1(3)
+		Then
+			randInt(L1(6),10E+L1(6)->|LBX(1+dim(|LBX)))
+			L1(7)->|LBY(1+dim(|LBY))
+			0->|LBF(1+dim(|LBF))
+			1->|LBA(1+dim(|LBA))
+		End
+		For(J,2,dim(|LBX))
+			If |LBF(J) and |LBX(J)>=V and |LBX(J)<V+12E and |LBY(J)>W-5 and 8D-3+W>|LBY(J)
+			Then
+				For(I,1,E)
+					For(Z,1,D)
+						V+12(I-1->A)
+						W+8(Z-1->B)
+						If [A](Z,I) and |LBX(J)>=A and |LBX(J)<A+5 and |LBY(J)>B-5 and B+5>|LBY(J)
+						Then
+							Text(|LBY(J),|LBX(J)," ")
+							0->|LBA(J)
+							0->[A](Z,I)
+							1+L1(5->L1(5))
+							For(C,0,3)
+								For(Q,0,7)
+									Text(~1,B,A,"*")
+								End
+								For(Q,0,7)
+									Text(~1,B,A,"+")
+								End
+							End
+							Text(~1,B,A," ")
+							0->R
+							If [A](1,1)
+							Then
+								1->R
+								"M "->Str1
+							Else
+								"  "->Str1
+							End
+							For(C,2,E)
+								If [A](1,C)
+								Then
+									1->R
+									Str1+"M "->Str1
+								Else
+									Str1+"  "->Str1
+								End
+							End
+							For(G,2,D)
+								For(C,1,E)
+									If [A](G,C)
+									Then
+										1->R
+										Str1+"M "->Str1
+									Else
+										Str1+"  "->Str1
+									End
+								End
+							End
+							If not(R)
+							Then
+								0->L
+							End
+						End
+					End
+				End
+			End
+		End
+		For(I,1,D)
+			Text(~1,W+8(I-1),V,sub(Str2,1+(I-1)2E,2E))
+		End
+		For(I,1,D)
+			Text(~1,L1(7)+8(I-1),L1(6),sub(Str1,1+(I-1)2E,2E))
+		End
+	End
+End
+ClrDraw
+ClrHome
+AxesOn
+Output(1,1,"---GAME  OVER---")
+Output(2,1,"YOUR SCORE IS:")
+Output(3,1,L1(5))
+Output(7,1,"PRESS ENTER TO  CONTINUE...")
+0->A
+For(I,2,dim(|LINVDR))
+	If not(A) and L1(5)>|LINVDR(I)
+	Then
+		1->A
+		For(J,dim(|LINVDR),I+1,~1)
+			|LINVDR(J-1->|LINVDR(J)
+		End
+		L1(5->|LINVDR(I))
+		Output(4,1,"THIS IS HIGH    SCORE NUMBER")
+		Output(5,14,I-1)
+		Output(5,15,"!")
+	End
+End
+Pause 
+Output(1,1,"THANK YOU FOR   PLAYING SPACE   INVADERS FOR TI!                ")
