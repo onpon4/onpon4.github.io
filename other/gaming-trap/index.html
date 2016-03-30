@@ -51,6 +51,7 @@
             <li><a href="#frogatto">Frogatto</a></li>
             <li><a href="#idsoftware">Games by id Software (Doom, Quake, etc)</a></li>
             <li><a href="#mari0">Games on Stabyourself.net (Mari0, Ortho Robot, etc)</a></li>
+            <li><a href="#ref">References</a></li>
           </ul>
 
 
@@ -82,16 +83,16 @@
 
 
           <h2 id="cave-story">Cave Story</h2>
-          <p>The original Cave Story is entirely proprietary, but the engine has been mostly rewritten; the rewrite is called NXEngine. Unfortunately, NXEngine imports map data from the original Cave Story, which includes scripts. Interestingly, these scripts are not only compiled into bytecode, but also encrypted. NXEngine is able to decrypt them by extracting the key from Cave Story's files, but this does suggest that the author of Cave Story intended to make these scripts unchangeable.</p>
+          <p>The original Cave Story is entirely proprietary, but the engine has been mostly rewritten; the rewrite is called NXEngine. Unfortunately, NXEngine imports stage data from the original Cave Story, which includes scripts.<a href="#ref-cavestory-map">[1]</a> Interestingly, these scripts are not only compiled into bytecode, but also encrypted. NXEngine is able to decrypt them by extracting the key from Cave Story's files, but this does suggest that the author of Cave Story intended to make these scripts unchangeable.</p>
 
 
           <h2 id="cube">Cube, AssaultCube, and Cube 2: Sauerbraten</h2>
-          <p>All three of these games' data include several ".cfg" files which are programs. They do not carry any license, which (as the readmes of these games are sure to tell you) means they must be assumed to be proprietary.</p>
-          <p>Confusingly, there is a package in Debian called "cube2". Despite its name, and what the window title of this game says, this is not Cube 2: Sauerbraten. Rather, it is a different game made from the libre components of Cube 2 along with some other components, and it is entirely libre.</p>
+          <p>All three of these games' data include several ".cfg" files which are programs.<a href="#ref-cube-cfg">[2]</a> They do not carry any license, which (as the readmes of these games are sure to tell you) means they must be assumed to be proprietary.</p>
+          <p>Confusingly, there is a package in Debian called "cube2". Despite its name, and what the window title of this game says, this is not Cube 2: Sauerbraten. Rather, it is a different game made from the libre components of Cube 2 along with some other components, and it is entirely libre. Red Eclipse, another game which uses the Cube 2 engine as a base, is also entirely libre.</p>
 
 
           <h2 id="frogatto">Frogatto</h2>
-          <p>Frogatto is advertised as driven by an open source engine, and that's technically correct; the basic shell of Frogatto's engine has been released as "Anura". A lot of Frogatto is also released under CC BY, a libre license. However, everything under data/levels is proprietary, and some scripts are included in these files. They are found in various ".cfg" files, usually controlling events.</p>
+          <p>Frogatto is advertised as driven by an open source engine, and that's technically correct; the basic shell of Frogatto's engine has been released as "Anura". A lot of Frogatto is also released under CC BY, a libre license. However, everything under data/level is proprietary, and some scripts are included in these files. They are found in various ".cfg" files (such as <a href="https://github.com/frogatto/frogatto/blob/master/data/level/General/titlescreen.cfg">"data/level/General/titlescreen.cfg</a> and <a href="https://github.com/frogatto/frogatto/blob/master/data/level/Cave/subterranean-scuffle.cfg">data/level/Cave/subterranean-scuffle.cfg</a>), usually controlling in-game events.</p>
 
 
           <h2 id="idsoftware">Games by id Software (Doom, Quake, etc)</h2>
@@ -105,6 +106,13 @@
           <p>Some of the games distributed on this website are libre. The libre games include Not Tetris 2, Not Pacman, Trosh, and Order of Twilight. They are released under the WTFPL.</p>
           <p>Mari0 and Ortho Robot are proprietary. Source code is available for these games, but it is under the proprietary CC BY-NC-SA license, which forbids commercial use.</p>
           <p>Rimshot, Unnamed Flying Game, Superleetprogrammer, and Shoothookers are proprietary. Source code is available for these games, but no license is given.</p>
+
+
+          <h2 id="ref">References</h2>
+          <ol>
+            <li id="ref-cavestory-map">The scripts are stored in ".tsc" files. See "tsc.cpp" in the <a href="http://nxengine.sourceforge.net/">NXEngine</a> source code.</li>
+            <li id="ref-cube-cfg">For Cube, see the "data" directory in the "Unix" distribution of <a href="https://sourceforge.net/projects/cube/">Cube</a>. For AssaultCube, see the <a href="https://github.com/assaultcube/AC/tree/master/config">"config" directory</a> in the <a href="https://github.com/assaultcube/AC">Git repository of AssaultCube</a>. For Sauerbraten, see the <a href="https://sourceforge.net/p/sauerbraten/code/HEAD/tree/data/">"data" directory</a> in the <a href="https://sourceforge.net/p/sauerbraten/code/HEAD/tree/">Subversion repository of Sauerbraten</a>.</li>
+          </ol>
         </div><!--close content_item-->
       </div><!--close content-->
     </div><!--close site_content-->
