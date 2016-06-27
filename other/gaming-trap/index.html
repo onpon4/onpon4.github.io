@@ -43,6 +43,7 @@
           <p>Table of Contents:</p>
           <ul>
             <li><a href="#emulators">Emulators</a></li>
+            <li><a href="#engines">Games made with Proprietary Game Engines</a></li>
             <li><a href="#scummvm">Adventure Game Engines (e.g. ScummVM)</a></li>
             <li><a href="#visual-novels">Visual Novels</a></li>
             <li><a href="#web">Web-based Games</a></li>
@@ -64,6 +65,11 @@
           <h2 id="emulators">Emulators</h2>
           <p>I have seen some people talk about emulators running proprietary games as if they were libre. The justifications vary, but they are always weak. The simple fact is that a ROM for a system like the NES, the MegaDrive, or the PlayStation contains a program, compiled for the respective system's architecture. It's no different from a program compiled for x86, and any justification for considering a proprietary game for these systems to be acceptable would apply just as well to a proprietary game compiled for x86, either on an x86 computer with no Internet connectivity or in a virtual machine that is not granted network access.</p>
           <p>In fact, it often goes further than that. Firstly, the games in question are typically developed with some sort of proprietary SDK, although in many cases this SDK is no longer necessary today (at least if you aren't concerned with your game not working on the original hardware). Secondly, many <em>emulators</em> are proprietary. Some prominent examples of proprietary emulators include Snes9x and ePSXe. Thirdly, some emulators (such as those for the Playstation) simply will not work without a proprietary program from the original system (typically referred to as a "BIOS", though this is technically incorrect).</p>
+
+
+          <h2 id="engines">Games made with Proprietary Game Engines</h2>
+          <p>This should go without saying, but like any other program, an otherwise libre video game which depends on a proprietary program is not truly libre. Most of the time, for games, such dependencies are game engines, like Game Maker, Unity3D, or Construct.</p>
+          <p>Game Maker is an interesting case: there is a libre compiler called ENIGMA which is in theory supposed to be compatible with Game Maker, but it in practice cannot successfully compile most Game Maker games, both because of features which have not been implemented in ENIGMA and because of problems with the binary formats of Game Maker 8.1 and older.</p>
 
 
           <h2 id="scummvm">Adventure Game Engines (e.g. ScummVM)</h2>
