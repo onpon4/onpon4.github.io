@@ -44,6 +44,7 @@
           <ul>
             <li><a href="#emulators">Emulators</a></li>
             <li><a href="#engines">Games made with Proprietary Game Engines</a></li>
+            <li><a href="#mods">Game Mods and ROM Hacks</a></li>
             <li><a href="#scummvm">Adventure Game Engines (e.g. ScummVM)</a></li>
             <li><a href="#visual-novels">Visual Novels</a></li>
             <li><a href="#web">Web-based Games</a></li>
@@ -70,6 +71,13 @@
           <h2 id="engines">Games made with Proprietary Game Engines</h2>
           <p>This should go without saying, but like any other program, an otherwise libre video game which depends on a proprietary program is not truly libre. Most of the time, for games, such dependencies are game engines, like Game Maker, Unity3D, or Construct.</p>
           <p>Game Maker is an interesting case: there is a libre compiler called ENIGMA which is in theory supposed to be compatible with Game Maker, but it in practice cannot successfully compile most Game Maker games, both because of features which have not been implemented in ENIGMA and because of problems with the binary formats of Game Maker 8.1 and older.</p>
+          <p>It is worth noting that while the current release of Construct is proprietary, "Construct Classic" (the first release of Construct) is libre. However, it is copiled with the proprietary MSVC compiler and depends on DirectX. It should be possible to compile it with MinGW and run it and games built with it in Wine, but I have not found instructions to do this.</p>
+
+
+          <h2 id="mods">Game Mods and ROM Hacks</h2>
+          <p>It is very common for popular games to have "mods" made for them, i.e. modifications to the games' software made by fans. How this is done varies; some games have official mechanisms to support mods, while some are modified by changing the binary directly. ROM hacking is the latter type.</p>
+          <p>To be perfectly clear, a mod of a proprietary game will produce a proprietary game, end of story, so any mod of a proprietary game is by extension proprietary. However, even mods of libre games can include proprietary software added in by the modder, either in the form of direct code changes or in the form of new scripts.</p>
+          <p>Another problem specific to ROM hacks is that they are usually distributed in the form of patches in the ".ips" format to avoid copyright infringement. This is a proprietary patch format and cannot be processed by any libre program I can find.</p>
 
 
           <h2 id="scummvm">Adventure Game Engines (e.g. ScummVM)</h2>
