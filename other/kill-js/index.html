@@ -46,11 +46,11 @@
 
           <p>It seems great on the surface, but what follows from this is that software is still being silently installed into our browsers every day. The only difference is that LibreJS thinks the programs are libre.</p>
 
-          <p>I don't want to downplay the importance of all software being libre. However, when any software is automatically installed onto our computers by the request of another party, it makes exercising freedom 0 properly impossible. It is assumed that you want all of these JavaScript programs, of which there are likely to be hundreds of new ones each day, to be executed on your computer, typically before you even have a chance to check the source code.</p>
+          <p>I don't want to downplay the importance of all software being libre. However, when any software is automatically installed onto our computers by the request of another party, it makes exercising freedom 0 properly impossible. It is assumed that you want all of these JavaScript programs, which can easily amount to hundreds of new scripts each day, to be executed on your computer, typically before you even have a chance to check the source code.</p>
 
-          <p>Even worse, the system of automatic JavaScript software installation only installs the software temporarily, to be executed once. In effect, whenever the server updates a JavaScript program that is sent to users' Web browsers, that update is effectively imposed on the users. Even if the script is libre, it's as if it has a backdoor built-in.</p>
+          <p>Even worse, the system of automatic JavaScript software installation only installs the software temporarily, to be executed once. In effect, whenever the server updates a JavaScript program that is sent to users' Web browsers, that update is imposed on the users. Even if the script is libre, it's as if it has a backdoor built-in.</p>
 
-          <p>It is not enough for software to be libre. It also needs to not be installed unless the user authorizes it, and then not updated unless the user authorizes it. Simply visiting a Web page doesn't count as authorization to install whatever software the page wants to install; after all, I have visited the Debian website in the past, but that doesn't mean that I authorize an installation of Debian on my computer. Similarly, visiting a Web page that requests installation of JavaScript doesn't necessarily mean you want to install that JavaScript.</p>
+          <p>This is very similar to the case of tivoization, where you may theoretically have the freedom to control what a program does, but cannot do so in practice because of the circumstances. It's not enough to have theoretical control. Actual control is also needed. In the case of JavaScript, this lack of control is not a result of malice, but rather a result of Web browsers carelessly assuming that the user desires the execution of every script a Web page might recommend. This is not necessarily true. It would be like if Windows was installed on my machine every time I read an article recommending the use of Windows, or if every blog post talking about how great Chrome is resulted in the automatic installation of Chrome onto my system.</p>
 
           <p>So what can we do? I know of two possible solutions.</p>
 
@@ -68,21 +68,27 @@
 
           <p>For this to work, installed JavaScript programs should also work for all Web pages that request it, not just one page. What already installed JavaScript code to use by default can be determined by getting a hash of minified versions of installed scripts, and then getting a hash of requested scripts after minifying them the same way. If that doesn't return a match, the file names of the scripts can be checked for matches or near-matches, and the user can be asked if these scripts should be used. Some kind of database in the user's browser specifying websites certain scripts should be used on would also be helpful.</p>
 
-          <p>I suppose this approach would take a considerable amount of effort, and this is probably why RMS, the FSF, and the developer of LibreJS haven't attempted it. But LibreJS is trying to fundamentally change the behavior of all Web developers in the world. Compared to that, I would argue that maintaining a repository of libre JavaScript programs would be a small task.</p>
+          <p>I suppose this approach would take a considerable amount of effort, and this is probably why the developer of LibreJS hasn't attempted it. It doesn't help that getting this to work <em>reliably</em> would involve constant work keeping up with changing Web pages.</p>
 
           <h3>Solution 2: Kill JavaScript</h3>
 
           <p>When I proposed something like Solution 1 on the bug-gnuzilla mailing list, one reply noted that there's a much simpler solution: rather than trying to fix JavaScript, we could just disable JavaScript execution in our browsers entirely (in otherwords, kill JavaScript). Of course, I really mean <em>automatically installed</em> JavaScript. There is nothing wrong with the current use of JavaScript to develop Firefox extensions, for example. User scripts and extensions can even be developed to replace important proprietary JavaScript code.</p>
 
-          <h3>Which approach is better?</h3>
+          <p>Still, this solution is not without its problems. In particular, this requires a massive social change, albeit less of a change than what LibreJS is attempting. Browsers removing JavaScript support can help this plan along, but there's a chicken and egg problem in the sense that browsers without JavaScript support will just be seen as inferior while many websites require it.</p>
+
+          <p>One possible middle ground to this end can be for a browser to support JavaScript, but have it turned off by default and give the user an easy way to temporarily enable JavaScript execution on a single page; that way, the user will get a JavaScript-free experience, but still have the option to use it for pages that demand it without so much inconvenience that it renders the browser unwieldy.</p>
+
+          <h3>The Answer</h3>
 
           <p>Each of these approaches has strengths and weaknesses.</p>
 
           <p>The first solution can yield good results immediately for things like Diaspora and Reddit: websites whose JavaScript code is required, but mostly libre. It would probably not bring about much if any change in the Web, but it doesn't need to in order to work. However, it would require some work to adjust a browser's behavior with respect to JavaScript appropriately, and it would be a lot more work to maintain a repository of libre JavaScript programs.</p>
 
-          <p>The second solution, on the other hand, is rather similar to what LibreJS is currently trying to do. It depends on changing the Web: convincing the majority of Web developers to stop requiring JavaScript code. If it works, it could work spectacularly. On the other hand, it could easily fail spectacularly, or just result in yet another method to automatically, silently install software into users' browsers becoming popular.</p>
+          <p>The second solution is rather similar to what LibreJS is currently trying to do, albeit on a much smaller scale. It depends on changing the Web: convincing the majority of Web developers to stop requiring JavaScript code. If it works, it could work spectacularly. On the other hand, it could easily fail spectacularly, or just result in yet another method to automatically, silently install software into users' browsers becoming popular.</p>
 
           <p>I'm not sure which is better, but LibreJS is neither a good solution, nor a good temporary fix or even a step in the right direction. Until a libre browser which properly fixes JavaScript becomes available, anyone who wants freedom in their computing must disable all normal JavaScript execution in their browsers, even if the code is libre, and Web developers who want to respect their users' freedom should work to eliminate all JavaScript requirements on their websites.</p>
+
+          <p>I would also like to call out to anyone who works on a Web browser and wants to help solve this problem: please consider making changes to the browser you develop so that it helps toward one of the solutions outlined above. As previously suggested, one very simple change that can be made is to disable JavaScript by default, but give users a button that temporarily allows JavaScript to execute on the current page. This would also have a nice side effect of improving the users' overall browsing experience by preventing excessive JavaScript code from bogging down their machines.</p>
         </div><!--close content_item-->
       </div><!--close content-->
     </div><!--close site_content-->
