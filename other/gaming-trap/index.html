@@ -52,6 +52,7 @@
             <li><a href="#cube">Cube, AssaultCube, and Cube 2: Sauerbraten</a></li>
             <li><a href="#frogatto">Frogatto</a></li>
             <li><a href="#gish">Gish</a></li>
+            <li><a href="#paintown">Paintown</a></li>
             <li><a href="#planeshift">PlaneShift</a></li>
             <li><a href="#idsoftware">Games by id Software (Doom, Quake, etc)</a></li>
             <li><a href="#mari0">Games on Stabyourself.net (Mari0, Ortho Robot, etc)</a></li>
@@ -120,6 +121,12 @@
           <p>To be clear, it is possible to play Gish with FreeGish, and no proprietary software is executed when you do so, but a small amount of effort renaming files is necessary; Gish's directory structure changed slightly between the source code release and the most recent proprietary version of Gish.</p>
 
 
+          <h2 id="paintown">Paintown</h2>
+          <p>Paintown's licensing is a huge mess. Its "data", which does not carry any sort of license, includes at least <a href="https://github.com/kazzmir/paintown-data/blob/master/scripts/paintown.py">one copyrightable script</a>. It also includes <a href="https://github.com/kazzmir/paintown-data/tree/master/shaders">some shaders</a>, but these shaders are duplicated in the source code repository, where it is implied that all "source code" files are under the 3-clause BSD License, so they may not be a problem.</p>
+          <p>Paintown character definitions are reasonably simple configuration files with no scripting. The M.U.G.E.N. character definitions are a bit more complicated. Most of the files for M.U.G.E.N. characters seem to also be simple configuration or image files, but I have been unable to deduce what the ".act" files are, since they are binary and I have been unable to find any explanation anywhere or locate where they are parsed in Paintown's source code.</p>
+          <p>In short: seemingly mostly because of sloppiness in how it is developed, Paintown appears to be a minor trap, and M.U.G.E.N. characters in general <em>may</em> be a trap; further analysis is needed.</p>
+
+
           <h2 id="planeshift">PlaneShift</h2>
           <p>PlaneShift is presented very loudly by its developers as "open source", but this claim rides on a technicality that flies in the face of not only libre software, but even open source.</p>
           <p>PlaneShift has parts under the GNU GPL and parts under a custom proprietary license, the "PlaneShift Content License" (which I will abbreviate as "PCL"). PlaneShift's <a href="http://www.planeshift.it/License">page</a> describing the licensing scheme has some wording that suggests that some software might be included under the PCL-licensed umbrella, although I was not able to find any in my brief trove through the PlaneShift source code repository. If it does, that alone is enough to classify PlaneShift as a trap. Additionally, there was an announcement made in 2015 that PlaneShift's engine would become dependent on the proprietary Unreal Engine, although I don't know if this change has been made yet.</p>
@@ -150,10 +157,12 @@
           <h2 id="notrap">Games Which Are Not Traps</h2>
           <p>Of course, any game which is entirely libre, such as the games listed on the <a href="https://libregamewiki.org">Libre Game Wiki</a>, is not a gaming trap. However, you may wish to know what games are not completely libre, but still not gaming traps. This list is probably incomplete; if you are aware of another game which belongs on this list, please let me know.</p>
           <ul>
+            <li><a href="http://abuse.zoy.org">Abuse</a>: The original game is entirely proprietary, and the "data" directory includes software (such as several Lisp scripts), but the current community-maintained version does not contain any proprietary software. The only remaining proprietary components shipped with Abuse are sound effects and music, and the Abuse maintainers deserve a great deal of credit for clearly documenting this and even offering an entirely libre distribution.</li>
             <li>Doom and some other early games by id Software: See <a href="#idsoftware">here</a>. Many Doom mods (PWADs) are also not traps. Look for PWADs which are compatible with "vanilla" Doom, Boom, or MBF. Be sure to also use a libre source port.</li>
             <li>Gish: See <a href="#gish">here</a>.</li>
             <li><a href="https://onpon4.itch.io/kitten-command">Kitten Command</a>: This game includes third-party graphics, sounds, and music which are proprietary, but all software portions are libre.</li>
             <li><a href="http://www.mfgg.net/?sess=259d77b9bbe4cef7116460d174961d63&act=resdb&param=02&c=2&id=33523">Mariovania</a>: This game includes many third-party graphics, sounds, and music which are proprietary, but all of "the game's code" is available under a generic lax permissive license. Therefore, all software portions are libre.</li>
+            <li><a href="http://opensnc.sourceforge.net/home/index.php">Open Sonic</a>: Some files (most notably the graphics, but also a couple of music files) are proprietary, but no software portions are. Scripting is not even supported. Open Surge, the game Open Sonic was supposed to kickstart the development of, is entirely libre.</li>
             <li><a href="https://www.srb2.org/">Sonic Robo Blast 2</a>: This game uses a libre Doom source port (Doom Legacy) as its base. The only parts of the game not licensed under the GNU GPL are third-party media, none of which is software.</li>
             <li><a href="http://sc2.sourceforge.net/">The Ur-Quan Masters</a> (Star Control II): This game's "content" is proprietary, available only under the terms of CC BY-NC-SA. However, none of the "content" is software, so The Ur-Quan Masters is not a trap. All of the software portions are contained in the Ur-Quan Masters source code, which is libre.</li>
           </ul>
