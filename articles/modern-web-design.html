@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fantastic Modern Website Design (No JavaScript Required) - The Diligent Circle</title>
+    <meta name="description" content="Julie Marchant's homepage" />
+    <meta name="keywords" content="onpon, onpon4" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+</head>
+
+<body>
+    <h1 class="header">The Diligent Circle</h1>
+    <nav class="header">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../games.html">Games</a></li>
+            <li class="current"><a href="../articles.html">Articles</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+    <article>
+        <h2>Fantastic Modern Website Design (No JavaScript Required)</h2>
+        <p>When I argue that <a href="kill-js.html">JavaScript should be eliminated from the Web</a>, one of the most common responses I hear is that I must be in favor of regressing back to the Web from the 1990s, and that good, modern Web design simply needs JavaScript to either look nice or work well. Here, I will explain, in general terms, what makes a modern JavaScript-free website. This document not intended to teach you how to design a Web page or use HTML or CSS (there are already several resources for that), but just to give a general idea of how Web pages should be designed.</p>
+
+        <h3>General Design Principles</h3>
+        <p>There are three components to good, JavaScript-free Web design. These components are <abbr title="Hyper-Text Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, and server-side code. Each serves a particular purpose:</p>
+        <ul>
+            <li>HTML is used to designate the content of a page as well as the purpose of that content. It should be style-agnostic.</li>
+            <li>CSS is used to designate what you would like the page to look like. It should be purely cosmetic, and it should utilize responsive design.</li>
+            <li>Server-side code is used to add interactivity. Typically, server-side code will be PHP, Python, Ruby, JavaScript, etc. It is not necessary for static websites, but necessary for dynamic websites (i.e. those that show different content for different people or circumstances).</li>
+        </ul>
+        <p>When designing a new website, you should always write the HTML and, if applicable for your website, server-side code first. CSS should then be added at the end, built around your website design. The reason for this is simply that CSS should always be optional on the client-side. Some clients, in particular text-based Web browsers (yes, people still use those) and browsers configured to provide accessibility for disabled users, will simply ignore CSS, so if you design the website based on the assumption that all users will see the particular design you designated in CSS, your website may become less readable or less nice-looking to those clients.</p>
+        <p>When it comes to server-side code, all bets are off; only the server sees server-side code, so you can use whatever programming language(s) you like: PHP, Python, Ruby, JavaScript, what have you. As long as the client is sent good HTML and CSS code, you're golden.</p>
+
+        <h3>Modern HTML: Simple and Elegant</h3>
+        <p>It used to be that HTML was a mess; different browsers had different tags, tags were used for styling willy-nilly, and the amount you could actually specify with HTML was limited. But nowadays, this mess has been cleaned up, and HTML has been vastly extended. Did you notice?</p>
+        <p>I'm referring, of course, to HTML5. Sure, everyone heard about the <code>&lt;video&gt;</code> tag and how it was finally going to kill Flash, but many other features haven't been talked about so much, and to this day many websites resort to outdated JavaScript code where standard HTML will work better. Take a look at a list of modern HTML tags and what they do. You may be surprised by what you find. For example, take a look at the <code>&lt;details&gt;</code> tag, which allows you to give the user text that they can show and hide with a mouse click, and the <code>&lt;picture&gt;</code> tag, which allows you to choose different image files for different screen sizes. There is a lot out there that many Web designers just don't utilize all that much.</p>
+        <p>As mentioned above, you should always use HTML to designate the structure and purpose of the content in the page, not the appearance or layout. For example, you don't use the <code>&lt;em&gt;</code> tag to indicate that something should be rendered in italics; that's a style concern. You use the tag to indicate that something should be <em>emphasized</em>, which is a purpose concern. The way the user sees the content is then decided by the client, optionally based on your supplied CSS code or, alternatively, by the user's browser configuration. As an example of why this is important, consider blind users. It can be easy to forget, but there are many blind users of the Internet, and they use accessibility features, most commonly screen readers, to do so. By marking up your HTML document based on the purpose of text, rather than how you want it to look, you ensure that these tools are able to present your document to the user correctly and elegantly.</p>
+
+        <h3>Modern CSS: Beautiful Yet Simple</h3>
+        <p>Even though everyone uses CSS, it might be one of the most under-utilized components on the Web. It's a lot more powerful than many people realize, and it's the answer to almost every supposed need for JavaScript there is.</p>
+        <p>Consider menus, for example. A lot of websites insist on using JavaScript for this, but you can easily create a nice menu with HTML and CSS. Just set the positioning mode of the menu itself to <code>absolute</code>, position it right below the menu headers, and then open and close it either by utilizing a <code>&lt;details&gt;</code> tag or by using the <code>:hover</code> selector in CSS. In fact, many websites already do this; see GitHub for a fantastic example.</p>
+        <p>In short, CSS is vast, and it's probably more capable than you give it credit for. Take the time to look through all of the capabilities of CSS. If you come across a roadblock, don't ask <em>if</em> you can do what you want without JavaScript. Ask <em>how</em>. I can pretty much guarantee that you can do it, and the result will blow any JavaScript method out of the water as far as elegance and user experience are concerned.</p>
+        <p>Of course, remember that all CSS should be optional. In particular, this means that if CSS is disabled completely, your website's information should all remain just as accessible, even if it's a little less nice-looking.</p>
+
+        <h3>Responsive Design: Universal Beauty</h3>
+        <p>One thing that has caught on recently, mostly due to the rise of mobile phones, is responsive design. Alternatively, some websites use adaptive design. The difference is simply that adaptive design changes its layout to accompany different device sizes, while responsive design just makes the content fit into whatever the size is.</p>
+        <p>Although it wasn't talked about much until a few years ago, responsive design is nothing new. In fact, one simple way to achieve responsive design is to not use CSS. Any plain HTML page is, by its very nature, responsive, because any Web browser can then change things like text size and text alignment to accompany the screen size.</p>
+        <p>With CSS, though, the way to do responsive design is still quite simple: use percentages rather than pixel amounts when defining the horizontal layout.</p>
+        <p>Of course, this is already well-known. The point I want to hammer home, however, is that responsive design and adaptive design do not need to go hand-in-hand with JavaScript. CSS alone does the job.</p>
+
+        <h3>User Interaction with Server-Side Code</h3>
+        <p>HTML and CSS alone is sufficient for simple websites like this one. If you need to add user interaction, though, the way to do so in a JavaScript-free Web is server-side code.</p>
+        <p>What you do on the server side is entirely up to you. Certain precautions should be taken for security, but I won't be touching on that here. What truly matters is how you get that user data. It's really not that complicated: use forms and utilize the POST and GET methods as appropriate.</p>
+        <p>Want to keep users on the same page while sending data to the server? There's a simple method: iframes. Yes, remember the <code>&lt;iframe&gt;</code> tag? It originated as a non-standard Internet Explorer tag, but it's now a standard part of HTML and can be used to embed pages within pages. You can use this to enable submission of form data while staying on the same page. Again, no JavaScript required.</p>
+        <p>And again, make sure to familiarize with all the features of forms. They are quite powerful on their own, no JavaScript required.</p>
+
+        <h3>Summary</h3>
+        <p>It is often said that JavaScript is needed for a modern experience. I hope this article has served to introduce you to a new world: a modern experience without JavaScript. Have faith: HTML, CSS, and server-side code are powerful tools, and if you put your mind to it, they can do anything that JavaScript can, and they can do it better.</p>
+    </article>
+    </main>
+
+    <div class="footer">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </div>
+</body>
+
+</html>
