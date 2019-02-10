@@ -29,8 +29,6 @@
         <p>This article is a supplement to my other article, "<a href="kill-js.html">Why (and How) to Kill JavaScript</a>".</p>
         <p>Despite what many people think, most websites work perfectly fine, or often even better, without JavaScript. However, this is not universal; some websites, including popular ones, are not designed to work without JavaScript. Such websites often fail to allow users to interact with them fully without JavaScript, and sometimes won't even show users anything without JavaScript. So this article explains easy ways to work around various JavaScript requirements.</p>
         <p>If you know of any workarounds I haven't documented here, please <a href="mailto:onpon4@riseup.net">contact me</a> so I can add it.</p>
-        <p>If a website you must use requires JavaScript and is not on this list, I would recommend using NoScript. Be sure to remove <em>all</em> of the default whitelist entries, as there are a lot of them. You can then either whitelist the websites you need to use, or you can simply enable JavaScript for a single tab. I prefer the latter solution, but use whatever method works for you to keep as much JavaScript junk out of your face as possible.</p>
-        <aside><p>On a side note, please thank website maintainers when their websites work without JavaScript. The more people express appreciation for JavaScript-free support, the more website maintainers will continue to provide that support. Thanking website maintainers for good JavaScript-free support is possibly the best way people who are not website maintainers can encourage those who are to move toward a JavaScript-free ecosystem.</p></aside>
 
         <p><details class="faq">
             <summary>Email</summary>
@@ -50,6 +48,15 @@
             <p>The author and host of Invidious has expressed interest in adding support for uploading videos at some point, but in the meantime, a public <a href="https://wiki.mediagoblin.org/Live_instances">MediaGoblin instance</a> will do the trick for sharing videos. Alternatively, you can host your own MediaGoblin instance.</p>
             <p>It's also worth noting that most popular video hosts work with youtube-dl, a tool for downloading videos. This is a fairly reasonable workaround for video hosts other than YouTube, such as Dailymotion and Vimeo.</p>
         </details></p>
+
+        <h3>General Tips for Other Websites</h3>
+        <p>If a website isn't listed above and doesn't work without JavaScript, don't give up just yet! Try one of these tips first.</p>
+        <ul>
+            <li>Change your user agent. Some websites will deliver different pages for mobile users, so identifying as a mobile device can sometimes help. Try a few different devices; sometimes what is received can vary quite a bit. You can also try identifying as a search engine, since some websites will provide a more accessible version of pages for crawlers. You can change your user agent in Firefox with the User Agent Switcher add-on.</li>
+            <li>Disable CSS styling. Some JavaScript is only required because of CSS files that set elements to hidden by default, or otherwise muck about with the display, in which case disabling CSS styling for the page will do the trick. You can disable CSS in Firefox by hitting the Alt key and then going to View->Page Style->No Style in the old-style menu bar (just don't forget to re-enable styling when you're done with the problem website).</li>
+            <li>Use a cached text-only version from Google.</li>
+        </ul>
+        <p>If none of these tricks work and you must use the website, I would recommend using NoScript. Be sure to remove <em>all</em> of the default whitelist entries, as there are a lot of them. You can then either whitelist the websites you need to use, or you can simply enable JavaScript for a single tab. I prefer the latter solution, but use whatever method works for you to keep as much JavaScript junk out of your face as possible.</p>
     </article>
     </main>
 
