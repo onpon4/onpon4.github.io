@@ -98,9 +98,12 @@ main
 .gameslist
 {
     width: 100%;
+    margin-top: 12px;
     margin-bottom: 12px;
+    padding-top: 4px;
     padding-bottom: 4px;
     overflow: auto;
+    font-size: x-large;
     text-align: center;
 }
 
