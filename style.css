@@ -95,19 +95,24 @@ main
     padding-bottom: 4px;
 }
 
-table.gameslist
+.gameslist
 {
     width: 100%;
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+    overflow: auto;
+    text-align: center;
 }
 
-table.gameslist td
+.gameslist img
 {
-    width: 25%;
-}
-
-table.gameslist td img
-{
-    width: 100%;
+    display: block;
+    float: left;
+    width: 24%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
 }
 
 .footer
