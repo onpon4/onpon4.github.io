@@ -95,6 +95,14 @@ main
     padding-bottom: 4px;
 }
 
+img.floating
+{
+    float: right;
+    max-width: 40%;
+    padding-left: 16px;
+    padding-bottom: 8px; 
+}
+
 .gameslist
 {
     width: 100%;
