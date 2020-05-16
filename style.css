@@ -96,7 +96,7 @@ main
     overflow: auto;
 }
 
-img.floating
+.floating
 {
     float: right;
     max-width: 40%;
@@ -148,17 +148,4 @@ details.faq summary:hover
     color: #C08;
     font-weight: bold;
     text-decoration: none;
-}
-
-video
-{
-    width: 100%;
-}
-
-@media (min-width: 740px)
-{
-    video
-    {
-        width: 640px;
-    }
 }
