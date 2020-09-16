@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Web Designers, Please Stop Reinventing the Wheel - The Diligent Circle</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="onpon, onpon4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" type="image/png" href="../favicon.png">
+</head>
+
+<body>
+    <h1 class="header">The Diligent Circle</h1>
+    <nav class="header">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../games.html">Games</a></li>
+            <li class="current"><a href="../articles.html">Articles</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="https://liberapay.com/diligentcircle/">Liberapay</a></li>
+            <li><a href="https://www.patreon.com/diligentcircle">Patreon</a></li>
+        </ul>
+    </nav>
+
+    <main>
+    <article>
+        <h2>Web Designers, Please Stop Reinventing the Wheel</h2>
+        <p>I realize we must sound like an old person saying this, so I'll go full old person mode: <i>You whippersnappers and your fancy JavaScript! What happened to good old HTML and CSS? Why do you gotta reinvent functionality that already works?</i> 👵</p>
+        <p>All kidding aside, we're actually only 27 years old, but I really mean that. <em>Why</em>? We use NoScript and are routinely perplexed by flashy "new" websites that forego basic HTML concepts in favor of JavaScript for no reason, forcing us to turn JavaScript on for a basic website. Everything has to be on a single page with only JavaScript to control what you see. It's like Flash websites all over again, except this time the limitations imposed aren't because of format restrictions; they're a result of strange design choices.</p>
+        <p>This, right here, is the culmination of our frustration with modern Web page design: the <a href="https://web.archive.org/web/20200916143956if_/https://material-shell.com/">website for something called Material Shell</a>. There is so much wrong with this, I'm going to have to take this step-by-step.</p>
+        <h3>The Blank JavaScript Void</h3>
+        <p>Without JavaScript, this website displays a blank page. That's the first problem; many websites these days opt to send not actual content in the HTML page that gets sent, but instead an empty shell that JavaScript is then tasked with populating. This means these websites simply don't work at all on a browser without JavaScript support (like text-based browsers or NetSurf), and sometimes they break even when JavaScript is enabled because of unforeseen circumstances.</p>
+        <p>I understand that the purpose of this JavaScript-loading page design is to reduce energy usage and complexity on the server side. The counter to this, though, is that unless you expect each user to get an entirely unique page every time, which is only very rarely the actual case, this method will actually <em>increase</em> energy usage overall, benefiting one server at the expense of dozens, hundreds, or even thousands of clients, depending on how popular the website is. This website is definitely <em>not</em> one of those cases where the content can be expected to be totally different for every page load, and neither are most websites that use this type of design.</p>
+        <h3>Using CSS for Meaning</h3>
+        <p>The second problem I see is just how the page is laid out. See those two iframes on the right? Yeah, they're not iframes. A little Inspect Element reveals that all of the layout is nothing more than a collection of &lt;div&gt; and &lt;span&gt; tags. That's because <em>everything</em> about this website's layout is controlled by CSS. Try deleting the couple dozen or so CSS files with Inspect Element; you end up with a horrible, unreadable mess with random text all over the place. <strong>This is not what CSS is designed for.</strong> CSS is designed for visual styling only and must be optional.</p>
+        <p>By contrast, see what happens when you delete the CSS from this page (the one you are currently reading). First of all, it's only one CSS file, not dozens of CSS files. But more importantly, you will find that the entire website still functions as normal. You still have your header links at the top, your footer at the bottom, and everything else organized as it should be. Everything about the structure and meaning of this page is contained in HTML; that's what HTML is for. As such, browsers without CSS support (such as text-based browsers) will still work just fine. It just won't necessarily look as pretty.</p>
+        <p>Not relying on CSS styling is also essential for accessibility. Screen readers (which blind users depend on) cannot parse random CSS styles to figure out some kind of hidden meaning. They depend on HTML tags, and they can't get that from a giant cluster of divs.</p>
+        <h3>Fake Pages</h3>
+        <p>The third problem doesn't ruin accessibility, but still, it infuriates us to no end. See the pages in this document? They're not pages. They're sections within a single page.</p>
+        <p>Look, I get it. We're not using dial-up anymore (or rather, most of us aren't; dial-up is still in use in some rural areas). You want to use those "fancy" page slide animations that are all the rage these days. I think it looks tacky and silly, wastes my time, and isn't going to age well, but let's just say that this design is the most marvelous thing in the world. Even if we accept that, I still find this design unacceptable.</p>
+        <p>This ties into the thing I was saying just a bit ago: HTML has a defined meaning, and this design flies in the face of it. The whole point of pages is to only send data to the client that's relevant to them. When you clicked on the link to this article, you didn't have to load every article I have on this site. You just loaded the one that you wanted to look at.</p>
+        <p>The counter-argument would be that in the Material Shell website, all of the faux "pages" actually belong on the same page anyway because they're all marketing babble. To that I say two things. Firstly, big pages of marketing babble don't belong on a home page to begin with. They belong on a dedicated About page so that only people who <em>want</em> to see marketing babble have to load it. Secondly, the page is clearly designed to encourage the client to use the table of contents (which it tricks you into thinking is a navigation bar) to go through the various sections.</p>
+        <p>Allow me to explain. It's not at all unusual or bad for a long document to have a table of contents. This sort of thing is the whole reason for section links. But this feature is designed for a single, unified document whose contents are all interrelated. For a simple example, let's look at our <a href="rejected-libre-games.html">Rejected Libre Games</a> page. This page has a table of contents to help organize the document by reason for rejection of a particular game. The key here is it's all a unified document whose sections are interdependent. This page cannot be divided into three pages and still remain coherent. Therefore, the table of contents exists to help with navigation without splitting the document up.</p>
+        <p>The Material Shell page, however, is a completely different story. This website's sections (which it tries hard to convince you are pages) are completely independent of one another and do not reference each other in the slightest. You could go to the "Tiling engine" section and not even glance at any of the others, and you wouldn't be missing a thing. All the context you need for it is there.</p>
+        <p>This is exactly what pages are for, which is why it's baffling to me that this site (alongside many others) chooses to use not real pages, but fake, simulated pages. Because it's cool, I guess? To save a few bytes by avoiding redundant header and footer portions? Not that stripping a few redundant headers is going to make up for the literal dozens of CSS files, plus the hundreds of kilobytes of JavaScript code. As of this writing, the entirety of all text on my website &ndash; this website &ndash; is only about 100KB, roughly half the size of just one <em>minified</em> JavaScript file in use by the Material Shell page. I'm really trying to give the fake pages design the benefit of the doubt here and no matter what angle I approach it at, there is no good reason I can think of to reinvent pages in this way with JavaScript code. It's needless, bulky, and cluttered.</p>
+        <h3>Beauty in Simplicity</h3>
+        <p>That's the main thing I'm getting at here. We don't need to reinvent the wheel and create less good custom solutions to problems that have already been solved. HTML supports iframes. It supports pages. It supports text, for fuck's sake. You don't have to do all of these basic things in a JavaScript program. JavaScript is meant to <em>extend</em> HTML's capabilities, not replace them.</p>
+        <p>Let me direct your attention again to our website (the one you are currently reading). It's simple and uncluttered. You could open it up in a text editor and understand it perfectly just as long as the text editor has text wrapping. All of the content is right there on the page. In fact, we don't use JavaScript <em>at all</em>; our websites are static and simply have no need for it. HTML and CSS are more than capable of doing everything we could possibly want to do and much more.</p>
+        <p>There's a certain beauty to simplicity. I know it can be tempting to want to grab all the toys and play with them, make everything flashy. But what's cool now won't be cool tomorrow. We're old enough to understand at least that much.</p>
+        <p>🕷️</p>
+    </article>
+    </main>
+
+    <div class="footer">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png"></a><br>This page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </div>
+</body>
+
+</html>
