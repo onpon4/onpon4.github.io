@@ -35,6 +35,7 @@ nav.header
     border-style: hidden;
     border-radius: 12px;
     width: 94%;
+    max-width: 64em;
     margin-left: auto;
     margin-right: auto;
     padding-left: 2%;
@@ -87,6 +88,7 @@ main
 {
     background: #DDF;
     width: 90%;
+    max-width: 60em;
     margin-left: auto;
     margin-right: auto;
     padding-left: 2%;
