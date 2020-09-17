@@ -46,13 +46,17 @@
         <h3>What's the word size of video game console X?</h3>
         <details class="faq">
             <summary>It's probably not what you think it is.</summary>
-            <p>Here's a list of some noteworthy video game consoles and the word size of their CPUs. If you've fallen for the bullshit marketing, some of these may surprise you. These are organized by initial release date, with the oldest systems appearing first.</p>
+            <p>Here's a list of some noteworthy video game consoles and the word size of their <abbr title="central processing units">CPUs</abbr>. If you've fallen for the bullshit marketing, some of these may surprise you. These are organized by initial release date, with the oldest systems appearing first.</p>
             <ul>
+                <li>Fairchild Channel F: 8-bit</li>
                 <li>Atari VCS (Atari 2600): 8-bit</li>
+                <li>Magnavox Odyssey 2: 8-bit</li>
                 <li>Intellivision: 16-bit</li>
-                <li>Atari 5200: 8-bit</li>
                 <li>Colecovision: 8-bit</li>
-                <li>Famicom (NES): 8-bit</li>
+                <li>Atari 5200: 8-bit</li>
+                <li>Vectrex: 8-bit</li>
+                <li>Sega SG-1000: 8-bit</li>
+                <li>Famicom (<abbr title="Nintendo Entertainment System">NES</abbr>): 8-bit</li>
                 <li>Sega Mark III (Master System): 8-bit</li>
                 <li>Atari 7800: 8-bit</li>
                 <li>PC Engine (TurboGrafx-16): 8-bit</li>
@@ -60,10 +64,11 @@
                 <li>Game Boy: 8-bit</li>
                 <li>Atari Lynx: 8-bit</li>
                 <li>Game Gear: 8-bit</li>
-                <li>Super Famicom (SNES): 16-bit</li>
-                <li>3DO: 32-bit</li>
+                <li>Super Famicom (<abbr title="Super Nintendo Entertainment System">SNES</abbr>): 16-bit</li>
+                <li>Neo Geo: 16/32-bit <small>(it's basically a 32-bit processor with 16-bit <abbr title="arithmetic logic units">ALUs</abbr>)</small></li>
+                <li>3DO Interactive Multiplayer: 32-bit</li>
                 <li>Atari Jaguar: 32-bit</li>
-                <li>32X: 32-bit</li>
+                <li>Super 32X (Genesis 32X, Mega Drive 32X, Mega 32X): 32-bit</li>
                 <li>Sega Saturn: 32-bit</li>
                 <li>PlayStation: 32-bit</li>
                 <li>Nintendo 64: 64-bit</li>
@@ -88,7 +93,7 @@
             <ul>
                 <li>The PC Engine marketed itself as "16-bit" in the U.S. It's not 16-bit. It's 8-bit. The "16-bit" claim comes from the fact that it has a 16-bit video color encoder and a 16-bit video display controller. These have nothing to do with word size. It's likely that the "16-bit" claim was made as a marketing ploy to ride on the bullshit being spread by Sega's marketing in the U.S.</li>
                 <li>The Atari Jaguar was aggressively marketed as "64-bit". Atari got to this bullshit result by adding together the "bits" of its two 32-bit CPUs. This isn't how word size works. Having two 32-bit CPUs doesn't make processors any more efficient at processing 64-bit numbers. There are other benefits to multiprocessing (hence why it's so common today, though I would note that use of multiprocessing in video games is easier said than done), but these benefits have nothing whatsoever to do with word size.</li>
-                <li>There was some marketing referring to the Sega Dreamcast as "128-bit". This is nonsense. It's 32-bit. The 128-bit claim seems to come from the fact that it has a 128-bit FPU. The FPU is a component dedicated to carrying out operations specifically on floating-point numbers, and being 128-bit means that it natively handles quadruple-precision (128-bit) floating-point numbers. This isn't meaningless; it means that it can efficiently work with floating-point numbers as small as 0.000000000000000000000000000000001 without rounding, compared to double-precision's minimum of 0.000000000000001 without rounding or single-precision's minimum of 0.000001 without rounding. I question the realistic utility of that for video games, but in any case, it has nothing to do with word size.</li>
+                <li>There was some marketing referring to the Sega Dreamcast as "128-bit". This is nonsense. It's 32-bit. The 128-bit claim seems to come from the fact that it has a 128-bit <abbr title="floating-point unit">FPU</abbr>. The FPU is a component dedicated to carrying out operations specifically on floating-point numbers, and being 128-bit means that it natively handles quadruple-precision (128-bit) floating-point numbers. This isn't meaningless; it means that it can efficiently work with floating-point numbers as small as 0.000000000000000000000000000000001 without rounding, compared to double-precision's minimum of 0.000000000000001 without rounding or single-precision's minimum of 0.000001 without rounding. I question the realistic utility of that for video games, but in any case, it has nothing to do with word size.</li>
             </ul>
         </details>
         <h3>Isn't video game console X 128-bit (or 256-bit)?</h3>
@@ -96,7 +101,7 @@
             <summary>No. There is no such thing as a 128-bit video game console and there never will be.</summary>
             <p>Video game consoles are really just stripped-down microcomputers. There is not and never has been any microcomputer with a 128-bit processor. The only 128-bit computers that have ever existed are mainframes. I don't care how advanced you think your computer or video game console is, it's a baby's toy in comparison to a mainframe.</p>
             <p>In fact, video games have very little use for a larger word size, as mentioned before, so video game consoles tend to have smaller word sizes for longer than general-purpose computers. The Intel 8086, for example, which was a 16-bit predecessor to the x86-64 CPUs that are so prevalent today, was first released in <em>1978</em>, fully a decade before Sega released the Mega Drive. Similarly, the Intel 80386 (the first 32-bit x86 processor) was released in 1985, a full decade before 32-bit video game consoles started to appear; and the AMD Opteron (the first x86-64 processor) was released in 2003, a full decade before the PlayStation 4 (the first Sony console to be 64-bit).</p>
-            <p>But surely there will be 128-bit PCs and game consoles in the future! It's done that before! It'll do it again, right? Yeah, no, I don't think so. I know someone will tell me that everyone's said that they've reached the pinnacle of what will be needed, and you know what? Fair enough. But we'll have quantum computers that work completely differently from the silicon-based models we're currently used to long before we need to even think about regularly dealing with numbers that 64 bits can't hold.</p>
+            <p>But surely there will be 128-bit <abbr title="personal computers">PCs</abbr> and game consoles in the future! It's done that before! It'll do it again, right? Yeah, no, I don't think so. I know someone will tell me that everyone's said that they've reached the pinnacle of what will be needed, and you know what? Fair enough. But we'll have quantum computers that work completely differently from the silicon-based models we're currently used to long before we need to even think about regularly dealing with numbers that 64 bits can't hold.</p>
             <p>The thing you need to realize here is that increasing the word size increases the range of possible values exponentially. Let me demonstrate by listing the maximum possible value of an unsigned integer of a particular size:</p>
             <ul>
                 <li>8 bits: 255</li>
