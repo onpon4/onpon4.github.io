@@ -151,3 +151,8 @@ details.faq summary:hover
     font-weight: bold;
     text-decoration: none;
 }
+
+aside.footnotes ol
+{
+    font-size: smaller;
+}
