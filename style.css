@@ -137,6 +137,16 @@ main
     text-align: center;
 }
 
+details
+{
+    cursor: pointer;
+}
+
+details summary:hover
+{
+    text-decoration: underline;
+}
+
 details.faq summary
 {
     color: #008;
