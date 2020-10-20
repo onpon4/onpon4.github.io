@@ -137,7 +137,7 @@ main
     text-align: center;
 }
 
-details
+details summary
 {
     cursor: pointer;
 }
