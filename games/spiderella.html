@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Spiderella - The Diligent Circle</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="onpon, onpon4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" type="image/png" href="../favicon.png">
+</head>
+
+<body>
+    <h1 class="header">The Diligent Circle</h1>
+    <nav class="header">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li class="current"><a href="../games.html">Games</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="https://liberapay.com/diligentcircle/">Liberapay</a></li>
+            <li><a href="https://www.patreon.com/diligentcircle">Patreon</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Spiderella</h2>
+        <p>This describes a single-deck variant of <a href="https://en.wikipedia.org/wiki/Spider_(solitaire)">Spider</a> that we came up with. Our play-testing shows it to be challenging, yet fair.</p>
+        <p>Spiderella is similar to 4-suit Spider in most ways, but with three key differences:</p>
+        <ol>
+            <li>Only one deck is used instead of two.</li>
+            <li>The tableau begins with two empty piles which are not dealt to. They are otherwise treated the same as any other empty pile in the tableau.</li>
+            <li>Unoccupied foundation piles can be used as cells (as in FreeCell). They must be emptied before placing a completed stack of cards in them.</li>
+        </ol>
+
+        <h3>Deck</h3>
+        <p>Standard 52-card deck (thirteen ordered ranks of four suits) with no jokers. Ranks here are referred to via the numbers 1-13. In a typical deck, non-numbered cards will be assigned as follows:</p>
+        <ul>
+            <li>Ace (A): 1</li>
+            <li>Jack (J): 11</li>
+            <li>Queen (Q): 12</li>
+            <li>King (K): 13</li>
+        </ul>
+        <p>However, Spiderella does not enforce this or any other numbering scheme as long as what corresponds with each number from 1 to 13 is understood and decided in advance before dealing cards.</p>
+
+        <h3>Setup</h3>
+        <p>The layout consists of three areas (all cards are to be distributed randomly and without knowledge of their positioning):</p>
+        <ul>
+            <li>Tableau: Consists of seven piles. The first and second piles initially contain one face-down, squared pile of six cards each. The third, fourth, and fifth piles initially contain one face-down, squared pile of five cards each. The sixth and seventh piles initially contain no cards. The top card of each squared pile must be turned face-up. Face-up cards in the tableau are fanned down and are considered separate from any face-down cards beneath them.</li>
+            <li>Stock: A face-down, squared pile placed above the tableau. It should initially contain exactly 25 cards.</li>
+            <li>Foundation: Placed above the tableau, typically to the right of the stock. Consists of four face-up, squared piles, initially empty.</li>
+        </ul>
+
+        <h3>Rules</h3>
+        <ul>
+            <li>Any face-up card can be placed onto any other face-up card which is exactly one rank above its own, but cannot be placed onto any other card. For example, a 4 of clubs can be placed onto a 5 of clubs, 5 of hearts, 5 of diamonds, or 5 of spades, but <em>not</em> onto a 7 of clubs.</li>
+            <li>If a number of cards at the top of a face-up pile on the tableau are of the same suite and consecutive from front to back, they may be moved together as a group. When moved together, the back card of the group is used to determine what they can be moved onto. For example:
+                <ul>
+                    <li>If a face-up pile contains (from front to back) a 4 of spades, a 5 of spades, and a 6 of hearts, the 4 of spades and 5 of spades may be moved together (onto e.g. a 6 of spades), but they may not be moved together with the 6 of hearts as they do not share the same suit.</li>
+                    <li>If a face-up pile contains (from front to back) a 2 of diamonds, a 3 of diamonds, a 5 of diamonds, and a 6 of diamonds, the 2 of diamonds and 3 of diamonds may be moved together (onto e.g. a 4 of hearts), but they may not be moved together with the 5 of diamonds as the values 3 and 5 are not consecutive.</li>
+                </ul>
+            </li>
+            <li>Any card or group of cards can be placed onto an empty tableau stack.</li>
+            <li>At any time, you can choose to deal cards from the stock. If you do this, exactly five cards are to be dealt, with one card placed on top of each of the first five tableau stacks in order of their appearance from the deck, face-up, ignoring normal card placement rules. Play then resumes as normal.</li>
+            <li>Any empty foundation pile can be used as a cell. A single card (but not a group of cards) may be placed into an empty cell at any time, and a card in a cell may be moved back to the tableau at any time.</li>
+            <li>When the top of any pile includes a full stack of all cards in a suite consecutively ordered from front to back, those cards may be placed into an empty foundation pile. (Note: to qualify as empty, it must not be currently in use as a cell.) Once this is done, these cards remain in the foundation pile for the rest of the game and cannot be returned to the tableau. The stack also can no longer function as a cell.</li>
+            <li>The game is won when all cards are in the foundation.</li>
+        </ul>
+    </main>
+
+    <div class="footer">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png"></a><br>This page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </div>
+</body>
+
+</html>
