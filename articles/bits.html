@@ -33,14 +33,95 @@
             <summary>Word size, or how much information a processor can handle at once.</summary>
             <p>Computers process data in binary. Binary (also known as base 2) consists of only two digits: 0 and 1. By contrast, decimal (the numeral system we usually use, also known as base 10) consists of ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9.</p>
             <p>Incidentally, the likely reason we generally use decimal is because we have ten fingers, so decimal generally makes it easier for us to count on our fingers. Similarly, the reason computers use binary is because they use devices for storage which can be broken down to "on" and "off" states, and this is much simpler to design than gradient states would be (as would be needed for a decimal system). So information on computers is always stored in binary digits, or bits. So that's what a bit is: it's the smallest possible unit of information any computer can process.</p>
-            <p>However, manipulating only bits directly would be inefficient for many mathematical operations. To make processing more efficient, processors are usually designed to manipulate a larger number of bits at once. This is known as word size and a power of two is usually chosen since this makes certain things easier. A power of two is any value which can be calculated by raising two to some natural number, so some examples of powers of two are 2 (2<sup>1</sup>), 4 (2<sup>2</sup>), 8 (2<sup>3</sup>), and 16 (2<sup>4</sup>). That's why word sizes double with each increase; the next power of two is always exactly twice the previous power of two since raising a number to the power of a positive integer, mathematically, is equivalent to multiplying it by itself that many times.</p>
+            <p>
+                However, manipulating only bits directly would be inefficient for many mathematical operations. To make processing more efficient, processors are usually designed to manipulate a larger number of bits at once. This is known as word size and a power of two is usually chosen since this makes certain things easier. A power of two is any value which can be calculated by raising two to some natural number, so some examples of powers of two are
+                2 <math display="inline">
+                    <mrow>
+                        <mtext>(</mtext>
+                        <msup>
+                            <mn>2</mn>
+                            <mn>1</mn>
+                        </msup>
+                        <mtext>)</mtext>
+                    </mrow>
+                </math>,
+                4 <math display="inline">
+                    <mrow>
+                        <mtext>(</mtext>
+                        <msup>
+                            <mn>2</mn>
+                            <mn>2</mn>
+                        </msup>
+                        <mtext>)</mtext>
+                    </mrow>
+                </math>,
+                8 <math display="inline">
+                    <mrow>
+                        <mtext>(</mtext>
+                        <msup>
+                            <mn>2</mn>
+                            <mn>3</mn>
+                        </msup>
+                        <mtext>)</mtext>
+                    </mrow>
+                </math>, and
+                16 <math display="inline">
+                    <mrow>
+                        <mtext>(</mtext>
+                        <msup>
+                            <mn>2</mn>
+                            <mn>4</mn>
+                        </msup>
+                        <mtext>)</mtext>
+                    </mrow>
+                </math>.
+                That's why word sizes double with each increase; the next power of two is always exactly twice the previous power of two since raising a number to the power of a positive integer, mathematically, is equivalent to multiplying it by itself that many times.
+            </p>
         </details>
         <h3>Why does word size matter for video games?</h3>
         <details class="faq">
             <summary>It doesn't.</summary>
             <p>OK, saying that it doesn't matter at all is ever so slightly misleading, but not really. Word size matters because a larger word size makes a processor able to perform mathematical operations on and otherwise manage larger numbers more efficiently.</p>
-            <p>To understand why, we need to go back to what word size actually means. As I said before, word size refers to the amount of information a processor works with and manipulates at once. You can find out the maximum range of a value in a particular amount of space by using some simple formulas. If <var>b</var> is the space available in bits, the possible range of a <dfn>signed integer</dfn> <small>(via two's complement, the most efficient way to represent a signed integer)</small> is [&minus;2<sup><var>b</var>&minus;1</sup>,2<sup><var>b</var>&minus;1</sup>), and the range of an <dfn>unsigned integer</dfn> is [0,2<sup><var>b</var></sup>). The difference between the two is that signed integers reserve one bit for storing whether the value is positive or negative (the sign of the number), while unsigned integers can only store positive or zero values and use that extra bit to increase their possible positive range.</p>
-            <p>In the case of an 8-bit processor, a signed integer in the processor's native size can store values between &minus;128 and 127, and an unsigned integer in said size can store values between 0 and 255. This is why some number counters in NES games maxed out at 255; since that's the maximum number an unsigned 8-bit integer can contain, it makes sense as a choice for a maximum for, say, the number of rupees you can hold at once.</p>
+            <p>
+                To understand why, we need to go back to what word size actually means. As I said before, word size refers to the amount of information a processor works with and manipulates at once. You can find out the maximum range of a value in a particular amount of space by using some simple formulas. If <var>b</var> is the space available in bits, the possible range of a <dfn>signed integer</dfn> <small>(via two's complement, the most efficient way to represent a signed integer)</small> is
+                <math display="inline">
+                    <mrow>
+                        <mo symmetric=false>[</mo>
+                        <msup>
+                            <mn>-2</mn>
+                            <mrow>
+                                <mi>b</mi>
+                                <mo>-</mo>
+                                <mn>1</mn>
+                            </mrow>
+                        </msup>
+                        <mo>,</mo>
+                        <msup>
+                            <mn>2</mn>
+                            <mrow>
+                                <mi>b</mi>
+                                <mo>-</mo>
+                                <mn>1</mn>
+                            </mrow>
+                        </msup>
+                        <mo symmetric=false>)</mo>
+                    </mrow>
+                </math>,
+                and the range of an <dfn>unsigned integer</dfn> is
+                <math display="inline">
+                    <mrow>
+                        <mo symmetric=false>[</mo>
+                        <mn>0</mn>
+                        <mo>,</mo>
+                        <msup>
+                            <mn>2</mn>
+                            <mi>b</mi>
+                        </msup>
+                        <mo symmetric=false>)</mo>
+                    </mrow>
+                </math>.
+                The difference between the two is that signed integers reserve one bit for storing whether the value is positive or negative (the sign of the number), while unsigned integers can only store positive or zero values and use that extra bit to increase their possible positive range.</p>
+            <p>In the case of an 8-bit processor, a signed integer in the processor's native size can store values between -128 and 127, and an unsigned integer in said size can store values between 0 and 255. This is why some number counters in NES games maxed out at 255; since that's the maximum number an unsigned 8-bit integer can contain, it makes sense as a choice for a maximum for, say, the number of rupees you can hold at once.</p>
             <p>However, the eagle-eyed among you will notice that the NES is not limited to numbers up to 255. Scores far exceed that. And you're right; word size does not place any limitation on the kind of data that can be worked with. It only reduces <em>efficiency</em> of handling larger numbers. The real-life consequences of this are minuscule for a two-dimensional game. This is why an 8-bit system, the PC Engine (also known as the TurboGrafx-16), competed with 16-bit systems like the Mega Drive and Super Famicom without anyone considering it incapable or out-of-place.</p>
         </details>
         <h3>What's the word size of video game console X?</h3>
